@@ -1,5 +1,4 @@
 import streamlit as st
-import webbrowser
 
 # Set page config (now with HealthGen name)
 st.set_page_config(
@@ -14,7 +13,7 @@ st.set_page_config(
     }
 )
 
-# Custom CSS for styling (with reduced negative spacing)
+# Custom CSS for styling
 st.markdown("""
     <style>
     .stApp {
@@ -25,81 +24,77 @@ st.markdown("""
         font-size: 36px;
         color: #2b5876;
         font-weight: 700;
-        margin-bottom: 10px;  /* Reduced from 20px */
+        margin-bottom: 10px;
         text-align: center;
     }
     .subheader {
         font-size: 18px;
         color: #4e7c9f;
-        margin-bottom: 20px;  /* Reduced from 30px */
+        margin-bottom: 20px;
         text-align: center;
     }
     .feature-card {
         background-color: white;
         border-radius: 10px;
         padding: 20px;
-        margin-bottom: 15px;  /* Reduced from 20px */
+        margin-bottom: 15px;
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
     .feature-title {
         font-size: 20px;
         color: #2b5876;
         font-weight: 600;
-        margin-bottom: 8px;  /* Reduced from 10px */
+        margin-bottom: 8px;
     }
     .feature-desc {
         font-size: 14px;
         color: #5a5a5a;
         margin-bottom: 0;
     }
-    .stButton>button {
-        background-color: #4e7c9f;
-        color: white;
-        border-radius: 8px;
-        padding: 10px 20px;
-        font-weight: 600;
-        margin: 0 auto;
-        display: block;
-    }
-    .stButton>button:hover {
-        background-color: #3a5f7d;
-        color: white;
-    }
     .button-container {
         display: flex;
         justify-content: center;
         gap: 15px;
-        margin-bottom: 20px;  /* Reduced from 30px */
+        margin-bottom: 20px;
+        flex-wrap: wrap;
     }
-    /* Reduce spacing around horizontal rule */
+    .button-container a button {
+        background-color: #4e7c9f;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 10px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    .button-container a button:hover {
+        background-color: #3a5f7d;
+    }
     .stMarkdown hr {
         margin: 1rem 0;
     }
     </style>
     """, unsafe_allow_html=True)
 
-# URLs for redirection
-ROUTE_URL = "https://hospitaldetector.streamlit.app/"
-FORM_URL = "https://atuqmy2wd5h8zetufyd4vm.streamlit.app/"
-VACCINE_URL = "https://kapish19-vaccination-reminder-bot-interfaceapp-dip7fp.streamlit.app/"
-
 # Main content
 st.markdown('<div class="header">HealthGen</div>', unsafe_allow_html=True)
 st.markdown('<div class="subheader">Bridging healthcare accessibility gaps through smart location mapping and AI-powered assistance</div>', unsafe_allow_html=True)
 
-# Centered buttons container
-st.markdown('<div class="button-container">', unsafe_allow_html=True)
-col1, col2, col3 = st.columns(3)
-with col1:
-    if st.button("Route Optimizer"):
-        webbrowser.open_new_tab(ROUTE_URL)
-with col2:
-    if st.button("Medical Form Filler"):
-        webbrowser.open_new_tab(FORM_URL)
-with col3:
-    if st.button("Vaccination Assistant"):
-        webbrowser.open_new_tab(VACCINE_URL)
-st.markdown('</div>', unsafe_allow_html=True)
+# Buttons using HTML for client-side navigation
+st.markdown("""
+<div class="button-container">
+    <a href="https://hospitaldetector.streamlit.app/" target="_blank">
+        <button>Route Optimizer</button>
+    </a>
+    <a href="https://atuqmy2wd5h8zetufyd4vm.streamlit.app/" target="_blank">
+        <button>Medical Form Filler</button>
+    </a>
+    <a href="https://kapish19-vaccination-reminder-bot-interfaceapp-dip7fp.streamlit.app/" target="_blank">
+        <button>Vaccination Assistant</button>
+    </a>
+</div>
+""", unsafe_allow_html=True)
 
 st.markdown("---")
 
