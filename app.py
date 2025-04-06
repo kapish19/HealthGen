@@ -2,7 +2,7 @@ import streamlit as st
 
 # Set page config (now with HealthGen name)
 st.set_page_config(
-    page_title="HealthGen",
+    page_title="HealthConnect",
     page_icon="🏥",
     layout="centered",
     initial_sidebar_state="expanded",
