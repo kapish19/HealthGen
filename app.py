@@ -78,7 +78,7 @@ st.markdown("""
     """, unsafe_allow_html=True)
 
 # Main content
-st.markdown('<div class="header">HealthGen</div>', unsafe_allow_html=True)
+st.markdown('<div class="header">HealthConnect</div>', unsafe_allow_html=True)
 st.markdown('<div class="subheader">Bridging healthcare accessibility gaps through smart location mapping and AI-powered assistance</div>', unsafe_allow_html=True)
 
 # Buttons using HTML for client-side navigation
